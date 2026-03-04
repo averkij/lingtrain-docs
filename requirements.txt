@@ -1,0 +1,4 @@
+mkdocs<2
+mkdocs-material==9.7.4
+
+# python -m pip install -U "mkdocs<2" "mkdocs-material==9.7.4"

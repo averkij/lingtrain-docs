@@ -2,3 +2,38 @@ site_name: Lingtrain Docs
 site_url: https://lingtra.in/docs
 theme:
   name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.tabs.link
+
+markdown_extensions:
+  - attr_list
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - i18n:
+      languages:
+        - locale: en
+          name: English
+          build: true
+          default: true
+          nav:
+            - Home: index.md
+            - Uploading texts: uploading.md
+        - locale: ru
+          name: Russian
+          build: true
+          nav:
+            - Главная: index.md
+            - Загрузка текстов: uploading.md
+
+nav:
+  - Home: index.md
+  - Uploading texts: uploading.md
