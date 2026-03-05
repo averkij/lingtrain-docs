@@ -31,9 +31,9 @@ plugins:
               - Alignment process: alignment.md
               - Proxy texts: proxy.md
               - Export: export.md
-              - Alignment algorithm: algorithm.md
             - Python library:
-              - Python library: python-library.md
+              - lingtrain-aligner: python-library.md
+              - Alignment algorithm: algorithm.md
         - locale: ru
           name: Russian
           build: true
@@ -44,9 +44,9 @@ plugins:
               - Процесс выравнивания: alignment.md
               - Подстрочник: proxy.md
               - Экспорт: export.md
-              - Алгоритм выравнивания: algorithm.md
             - Библиотека Python:
-              - Библиотека Python: python-library.md
+              - lingtrain-aligner: python-library.md
+              - Алгоритм выравнивания: algorithm.md
 
 nav:
   - Getting started:
@@ -55,6 +55,6 @@ nav:
     - Alignment process: alignment.md
     - Proxy texts: proxy.md
     - Export: export.md
-    - Alignment algorithm: algorithm.md
   - Python library:
-    - Python library: python-library.md
+    - lingtrain-aligner: python-library.md
+    - Alignment algorithm: algorithm.md
