@@ -25,15 +25,36 @@ plugins:
           build: true
           default: true
           nav:
-            - Home: index.md
-            - Uploading texts: uploading.md
+            - Getting started:
+              - Overview: index.md
+              - Uploading texts: uploading.md
+              - Alignment process: alignment.md
+              - Proxy texts: proxy.md
+              - Export: export.md
+              - Alignment algorithm: algorithm.md
+            - Python library:
+              - Python library: python-library.md
         - locale: ru
           name: Russian
           build: true
           nav:
-            - Главная: index.md
-            - Загрузка текстов: uploading.md
+            - Начало работы:
+              - Обзор: index.md
+              - Загрузка текстов: uploading.md
+              - Процесс выравнивания: alignment.md
+              - Подстрочник: proxy.md
+              - Экспорт: export.md
+              - Алгоритм выравнивания: algorithm.md
+            - Библиотека Python:
+              - Библиотека Python: python-library.md
 
 nav:
-  - Home: index.md
-  - Uploading texts: uploading.md
+  - Getting started:
+    - Overview: index.md
+    - Uploading texts: uploading.md
+    - Alignment process: alignment.md
+    - Proxy texts: proxy.md
+    - Export: export.md
+    - Alignment algorithm: algorithm.md
+  - Python library:
+    - Python library: python-library.md
