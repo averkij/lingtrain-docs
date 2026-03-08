@@ -1,5 +1,5 @@
-site_name: Lingtrain Docs
-site_url: https://lingtra.in/docs
+﻿site_name: Lingtrain Docs
+site_url: https://averkij.github.io/lingtrain-docs/
 theme:
   name: material
   palette:
