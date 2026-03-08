@@ -1,7 +1,8 @@
-﻿site_name: Lingtrain Docs
+site_name: Lingtrain Docs
 site_url: https://averkij.github.io/lingtrain-docs/
 theme:
   name: material
+  logo: assets/logo.svg
   palette:
     - scheme: default
       primary: indigo
