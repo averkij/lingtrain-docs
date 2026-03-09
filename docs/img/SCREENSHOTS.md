@@ -6,11 +6,11 @@ UI state, and actions needed to recreate the screenshot.
 
 ## apps-page.en.png
 
-- **URL:** `/apps`
-- **Section:** Apps page (Welcome)
+- **URL:** `/home`
+- **Section:** Home page (Welcome)
 - **State:** Logged in, no special setup needed
 - **Locale:** `en`
-- **How to reproduce:** Navigate to `/apps` while logged in.
+- **How to reproduce:** Navigate to `/home` while logged in.
 
 ## documents-empty.en.png
 

@@ -2,7 +2,7 @@
 
 Lingtrain Aligner is an ML-powered web application for creating parallel corpora and bilingual books from raw texts in different languages. It uses state-of-the-art multilingual embedding models to automatically align sentences across translations, supporting 50-200+ languages.
 
-![Apps page](img/apps-page.en.png)
+![Home page](img/apps-page.en.png)
 
 ## What is text alignment? {#what-is-alignment}
 
