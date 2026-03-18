@@ -16,6 +16,14 @@ markdown_extensions:
   - attr_list
   - toc:
       permalink: true
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 plugins:
   - search
@@ -26,36 +34,207 @@ plugins:
           build: true
           default: true
           nav:
-            - Getting started:
+            - Guide:
               - Overview: index.md
-              - Uploading texts: uploading.md
-              - Alignment process: alignment.md
-              - Proxy texts: proxy.md
-              - Export: export.md
-            - Python library:
+              - Getting started:
+                - "Your First Alignment": tutorial-first-alignment.md
+                - "Preparing Texts": tutorial-prepare-texts.md
+                - Account and Settings: tutorial-account-settings.md
+              - Using the Aligner:
+                - Uploading texts: uploading.md
+                - Alignment process: alignment.md
+                - Conflict Resolution: tutorial-conflict-resolution.md
+                - Editor Guide: tutorial-editor-guide.md
+                - Multiple Batches: tutorial-multiple-batches.md
+                - Quality Check: tutorial-quality-check.md
+                - Proxy texts: proxy.md
+                - Proxy Alignment: tutorial-proxy-alignment.md
+                - Export: export.md
+                - Export Formats: tutorial-export-formats.md
+              - User Stories:
+                - Creating a Parallel Book: tutorial-creating-parallel-book.md
+                - Building a Parallel Corpus: tutorial-building-corpus.md
+                - Building Translation Memory: tutorial-translation-memory.md
+                - Preserving a Minority Language: tutorial-minority-language.md
+              - Use Cases:
+                - For Language Learners: use-cases-language-learners.md
+                - For NLP Researchers: use-cases-researchers.md
+                - For Professional Translators: use-cases-translators.md
+                - For Publishers and Educators: use-cases-publishers.md
+              - Best Practices: best-practices.md
+              - FAQ: faq.md
+              - Troubleshooting: troubleshooting.md
+            - Concepts:
+              - Parallel Corpora:
+                - What is a Parallel Corpus?: what-is-parallel-corpus.md
+                - Applications of Parallel Corpora: parallel-corpora-applications.md
+                - Parallel Books History: parallel-books-history.md
+                - How Translators Work: translation-process.md
+              - Alignment Theory:
+                - "Text Alignment: Theory and Methods": text-alignment-theory.md
+                - History of Text Alignment: history-of-alignment.md
+                - Sentence Embeddings Explained: sentence-embeddings.md
+                - Understanding Cosine Similarity: cosine-similarity.md
+              - Algorithm:
+                - Alignment Algorithm: algorithm.md
+                - Batch Processing in Detail: batch-processing-explained.md
+                - Window and Shift Parameters: window-and-shift.md
+                - Conflict Resolution Algorithm: conflict-resolution-algorithm.md
+                - Visualization Guide: visualization-guide.md
+                - Quality Metrics: quality-metrics.md
+                - Sentence Splitting Deep Dive: sentence-splitting-deep-dive.md
+                - Comparing Embedding Models: embedding-models-comparison.md
+              - Languages:
+                - Supported Languages: supported-languages.md
+                - Working with Low-Resource Languages: low-resource-languages.md
+                - Language Families and Challenges: language-families.md
+            - Reference:
+              - Markup Tags: markup-reference.md
+              - Export Formats: export-formats-reference.md
+              - TMX Format Guide: tmx-format-guide.md
+              - Keyboard Shortcuts: keyboard-shortcuts.md
+              - Glossary: glossary.md
+              - Comparison with Alternatives: comparison-with-alternatives.md
+              - "Where to Find Texts": appendix-text-sources.md
+            - Python Library:
               - lingtrain-aligner: python-library.md
-              - Alignment algorithm: algorithm.md
+            - About:
+              - Architecture Overview: architecture-overview.md
         - locale: ru
           name: Russian
           build: true
           nav:
-            - Начало работы:
+            - Руководство:
               - Обзор: index.md
-              - Загрузка текстов: uploading.md
-              - Процесс выравнивания: alignment.md
-              - Подстрочник: proxy.md
-              - Экспорт: export.md
+              - Начало работы:
+                - "Первое выравнивание": tutorial-first-alignment.md
+                - "Подготовка текстов": tutorial-prepare-texts.md
+                - Аккаунт и настройки: tutorial-account-settings.md
+              - Использование выравнивателя:
+                - Загрузка текстов: uploading.md
+                - Процесс выравнивания: alignment.md
+                - Разрешение конфликтов: tutorial-conflict-resolution.md
+                - Редактор: tutorial-editor-guide.md
+                - Несколько пакетов: tutorial-multiple-batches.md
+                - Проверка качества: tutorial-quality-check.md
+                - Подстрочник: proxy.md
+                - Выравнивание с подстрочником: tutorial-proxy-alignment.md
+                - Экспорт: export.md
+                - Форматы экспорта: tutorial-export-formats.md
+              - Пользовательские истории:
+                - Создание параллельной книги: tutorial-creating-parallel-book.md
+                - Создание параллельного корпуса: tutorial-building-corpus.md
+                - Создание памяти переводов: tutorial-translation-memory.md
+                - Сохранение миноритарного языка: tutorial-minority-language.md
+              - Варианты использования:
+                - Для изучающих языки: use-cases-language-learners.md
+                - Для исследователей NLP: use-cases-researchers.md
+                - Для профессиональных переводчиков: use-cases-translators.md
+                - Для издателей и преподавателей: use-cases-publishers.md
+              - Лучшие практики: best-practices.md
+              - Часто задаваемые вопросы: faq.md
+              - Устранение неполадок: troubleshooting.md
+            - Концепции:
+              - Параллельные корпуса:
+                - Что такое параллельный корпус?: what-is-parallel-corpus.md
+                - Применение параллельных корпусов: parallel-corpora-applications.md
+                - История параллельных книг: parallel-books-history.md
+                - Как работают переводчики: translation-process.md
+              - Теория выравнивания:
+                - "Выравнивание текстов: теория": text-alignment-theory.md
+                - История выравнивания текстов: history-of-alignment.md
+                - Векторные представления предложений: sentence-embeddings.md
+                - Косинусное сходство: cosine-similarity.md
+              - Алгоритм:
+                - Алгоритм выравнивания: algorithm.md
+                - Пакетная обработка подробно: batch-processing-explained.md
+                - Параметры окна и смещения: window-and-shift.md
+                - Алгоритм разрешения конфликтов: conflict-resolution-algorithm.md
+                - Руководство по визуализации: visualization-guide.md
+                - Метрики качества: quality-metrics.md
+                - Разбиение на предложения: sentence-splitting-deep-dive.md
+                - Сравнение моделей эмбеддингов: embedding-models-comparison.md
+              - Языки:
+                - Поддерживаемые языки: supported-languages.md
+                - Малоресурсные языки: low-resource-languages.md
+                - Языковые семьи и проблемы: language-families.md
+            - Справочник:
+              - Справочник по разметке: markup-reference.md
+              - Справочник форматов экспорта: export-formats-reference.md
+              - Руководство по формату TMX: tmx-format-guide.md
+              - Горячие клавиши и советы: keyboard-shortcuts.md
+              - Глоссарий: glossary.md
+              - Сравнение с альтернативами: comparison-with-alternatives.md
+              - "Где найти тексты": appendix-text-sources.md
             - Библиотека Python:
               - lingtrain-aligner: python-library.md
-              - Алгоритм выравнивания: algorithm.md
+            - О проекте:
+              - Обзор архитектуры: architecture-overview.md
 
 nav:
-  - Getting started:
+  - Guide:
     - Overview: index.md
-    - Uploading texts: uploading.md
-    - Alignment process: alignment.md
-    - Proxy texts: proxy.md
-    - Export: export.md
-  - Python library:
+    - Getting started:
+      - "Your First Alignment": tutorial-first-alignment.md
+      - "Preparing Texts": tutorial-prepare-texts.md
+      - Account and Settings: tutorial-account-settings.md
+    - Using the Aligner:
+      - Uploading texts: uploading.md
+      - Alignment process: alignment.md
+      - Conflict Resolution: tutorial-conflict-resolution.md
+      - Editor Guide: tutorial-editor-guide.md
+      - Multiple Batches: tutorial-multiple-batches.md
+      - Quality Check: tutorial-quality-check.md
+      - Proxy texts: proxy.md
+      - Proxy Alignment: tutorial-proxy-alignment.md
+      - Export: export.md
+      - Export Formats: tutorial-export-formats.md
+    - User Stories:
+      - Creating a Parallel Book: tutorial-creating-parallel-book.md
+      - Building a Parallel Corpus: tutorial-building-corpus.md
+      - Building Translation Memory: tutorial-translation-memory.md
+      - Preserving a Minority Language: tutorial-minority-language.md
+    - Use Cases:
+      - For Language Learners: use-cases-language-learners.md
+      - For NLP Researchers: use-cases-researchers.md
+      - For Professional Translators: use-cases-translators.md
+      - For Publishers and Educators: use-cases-publishers.md
+    - Best Practices: best-practices.md
+    - FAQ: faq.md
+    - Troubleshooting: troubleshooting.md
+  - Concepts:
+    - Parallel Corpora:
+      - What is a Parallel Corpus?: what-is-parallel-corpus.md
+      - Applications of Parallel Corpora: parallel-corpora-applications.md
+      - Parallel Books History: parallel-books-history.md
+      - How Translators Work: translation-process.md
+    - Alignment Theory:
+      - "Text Alignment: Theory and Methods": text-alignment-theory.md
+      - History of Text Alignment: history-of-alignment.md
+      - Sentence Embeddings Explained: sentence-embeddings.md
+      - Understanding Cosine Similarity: cosine-similarity.md
+    - Algorithm:
+      - Alignment Algorithm: algorithm.md
+      - Batch Processing in Detail: batch-processing-explained.md
+      - Window and Shift Parameters: window-and-shift.md
+      - Conflict Resolution Algorithm: conflict-resolution-algorithm.md
+      - Visualization Guide: visualization-guide.md
+      - Quality Metrics: quality-metrics.md
+      - Sentence Splitting Deep Dive: sentence-splitting-deep-dive.md
+      - Comparing Embedding Models: embedding-models-comparison.md
+    - Languages:
+      - Supported Languages: supported-languages.md
+      - Working with Low-Resource Languages: low-resource-languages.md
+      - Language Families and Challenges: language-families.md
+  - Reference:
+    - Markup Tags: markup-reference.md
+    - Export Formats: export-formats-reference.md
+    - TMX Format Guide: tmx-format-guide.md
+    - Keyboard Shortcuts: keyboard-shortcuts.md
+    - Glossary: glossary.md
+    - Comparison with Alternatives: comparison-with-alternatives.md
+    - "Where to Find Texts": appendix-text-sources.md
+  - Python Library:
     - lingtrain-aligner: python-library.md
-    - Alignment algorithm: algorithm.md
+  - About:
+    - Architecture Overview: architecture-overview.md
