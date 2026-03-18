@@ -202,7 +202,7 @@ Click **"Sign in"** on the home page, then choose **"Create account"**. Enter yo
 
 ### Is my data private? {#data-privacy}
 
-Yes. Each user's documents and alignments are isolated. Other users cannot access your files. For details on data handling, see the [Data Privacy page](data-privacy.en.md).
+Yes. Each user's documents and alignments are isolated. Other users cannot access your files.
 
 ### Can I delete my data? {#delete-data}
 
@@ -218,7 +218,7 @@ You can export the alignment database (`.lt` format) at any time as a backup. Th
 
 ### Does Lingtrain have an API? {#api}
 
-Yes. Lingtrain exposes a REST API for all operations. You can upload documents, create alignments, start processing, resolve conflicts, and export results programmatically. See the [API Reference](api-reference.en.md) for details.
+Yes. Lingtrain exposes a REST API for all operations. You can upload documents, create alignments, start processing, resolve conflicts, and export results programmatically.
 
 ### How do I authenticate with the API? {#api-auth}
 
