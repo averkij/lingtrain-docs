@@ -92,7 +92,7 @@ The Bertalign system (Liu and Zhang, 2022) further advanced neural alignment by 
 
 Lingtrain Aligner, the system documented on this site, belongs to this modern generation of embedding-based aligners. It uses multilingual sentence embedding models (primarily LaBSE and sentence-transformers variants) to compute semantic similarity between sentences, then applies a windowed search strategy with iterative conflict resolution to produce high-quality alignments.
 
-What distinguishes Lingtrain is its focus on practical usability: an interactive web interface for reviewing and correcting alignments, batch processing with tunable parameters, visualization of alignment quality, and multiple export formats for downstream use. It also introduces the concept of proxy texts — using machine translation as an intermediary to align language pairs that embedding models handle poorly — extending effective coverage to virtually any language pair.
+What distinguishes Lingtrain is its focus on practical usability: an interactive web interface for reviewing and correcting alignments, batch processing with tunable parameters, visualization of alignment quality, and multiple export formats for downstream use. It also introduces the concept of interlinear translations — using machine translation as an intermediary to align language pairs that embedding models handle poorly — extending effective coverage to virtually any language pair.
 
 ## Timeline of key milestones {#timeline}
 

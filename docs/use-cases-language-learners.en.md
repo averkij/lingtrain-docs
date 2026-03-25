@@ -155,7 +155,7 @@ Lingtrain supports language learning for virtually any language pair. Common lea
 | Chinese | English | Supported with Chinese-specific splitting |
 | Korean | English | Dedicated splitting support |
 | Turkish | Russian | Good results with LaBSE model |
-| Bashkir | Russian | Use proxy text for best results |
+| Bashkir | Russian | Use interlinear translation for best results |
 
 For less common language pairs, see [Working with Low-Resource Languages](low-resource-languages.en.md).
 

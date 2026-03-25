@@ -283,8 +283,8 @@ The Ex-Commissioner of Scotland Yard was staying with old friends of his, Colone
 | `doc_index` | The aligned document index — mapping between source and target sentence IDs |
 | `batches` | Batch metadata (batch_id, shift, window) |
 | `marks` | Markup tags (type, text, line index, language direction) |
-| `proxy_from` | Proxy text sentences for source language (if uploaded) |
-| `proxy_to` | Proxy text sentences for target language (if uploaded) |
+| `proxy_from` | Interlinear text sentences for source language (if uploaded) |
+| `proxy_to` | Interlinear text sentences for target language (if uploaded) |
 | `embeddings_from` | Cached source embeddings (if STORE_EMBEDDINGS is enabled) |
 | `embeddings_to` | Cached target embeddings (if STORE_EMBEDDINGS is enabled) |
 | `metadata` | Key-value metadata (language codes, embedding model info, batch size) |

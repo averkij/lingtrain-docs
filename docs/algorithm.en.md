@@ -188,7 +188,7 @@ A perfect alignment produces a straight diagonal line. Common patterns:
 
 - **Clean diagonal** — excellent alignment, few or no conflicts
 - **Stepped diagonal** — translator added or removed content in blocks
-- **Scattered dots** — poor alignment, needs parameter adjustment (larger window, shift correction, or proxy texts)
+- **Scattered dots** — poor alignment, needs parameter adjustment (larger window, shift correction, or interlinear translations)
 
 The visualization also optionally includes a regression line overlay showing the expected proportional mapping.
 
@@ -198,5 +198,5 @@ The visualization also optionally includes a regression line overlay showing the
 2. **Use markup tags** — proper heading and author tags improve structural alignment
 3. **Start with default settings** — batch size 200, window 40 works well for most texts
 4. **Check the diagonal early** — after the first batch, verify the visualization. If it's broken, adjust the shift before continuing
-5. **Use proxy for rare languages** — machine-translate the split text and upload as a proxy document
+5. **Use interlinear translation for rare languages** — machine-translate the split text and upload as an interlinear document
 6. **Resolve conflicts before editing** — automatic resolution handles most cases; manual editing is for the remaining few

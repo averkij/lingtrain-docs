@@ -113,17 +113,17 @@ The **Marks** panel at the bottom shows all markup tags found in both documents 
 
 Mismatched mark counts can cause alignment issues, since marks define structural boundaries that the algorithm relies on.
 
-## Proxy documents {#proxy}
+## Interlinear documents {#proxy}
 
-For language pairs where the embedding model has limited training data (e.g., Bashkir, Chuvash, or other low-resource languages), you can use **proxy documents** to improve alignment quality.
+For language pairs where the embedding model has limited training data (e.g., Bashkir, Chuvash, or other low-resource languages), you can use **interlinear documents** to improve alignment quality.
 
-A proxy document is a **machine-translated version** of the split text that serves as an intermediary. The workflow is:
+An interlinear document is a **machine-translated version** of the split text that serves as an intermediary. The workflow is:
 
 1. Upload and split your source text normally
 2. **Download the split text** using the download button in the sentence preview
 3. **Translate it** using any machine translation service (Google Translate, DeepL, etc.)
-4. **Upload the translation back** as a proxy document in the Proxy documents section on the Alignment detail page
+4. **Upload the translation back** as an interlinear document in the Interlinear documents section on the Alignment detail page
 
-The proxy must contain **exactly the same number of lines** as the original split text. The alignment algorithm then uses the proxy for matching while the original text is preserved in the final output.
+The interlinear document must contain **exactly the same number of lines** as the original split text. The alignment algorithm then uses the interlinear translation for matching while the original text is preserved in the final output.
 
-Proxy text is displayed as subscript annotations in the editor, helping you verify alignment quality even when you don't read one of the languages.
+Interlinear text is displayed as subscript annotations in the editor, helping you verify alignment quality even when you don't read one of the languages.

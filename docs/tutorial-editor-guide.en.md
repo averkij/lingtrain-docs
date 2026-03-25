@@ -99,16 +99,16 @@ The **Split sentence** action allows you to split the content of a cell at a spe
 
 This is useful when two sentences were incorrectly joined into one cell — you can split them and align each part separately.
 
-## Working with Proxy Annotations {#proxy-annotations}
+## Working with Interlinear Annotations {#proxy-annotations}
 
-When proxy documents are loaded for the alignment, the editor can display proxy translations as subscript annotations below each sentence.
+When interlinear documents are loaded for the alignment, the editor can display interlinear translations as subscript annotations below each sentence.
 
-Toggle proxy visibility using the **"Show subscriptions"** switch in the Conflicts panel header.
+Toggle interlinear visibility using the **"Show interlinear"** switch in the Conflicts panel header.
 
-Proxy annotations are helpful for:
+Interlinear annotations are helpful for:
 
-- **Verifying alignment of unfamiliar languages** — if you do not read one of the languages, the proxy translation (in a language you know) helps you confirm that the pairs are correct.
-- **Checking proxy quality** — comparing the proxy translation against the original to spot any issues.
+- **Verifying alignment of unfamiliar languages** — if you do not read one of the languages, the interlinear translation (in a language you know) helps you confirm that the pairs are correct.
+- **Checking interlinear quality** — comparing the interlinear translation against the original to spot any issues.
 
 ## Editor Workflow Recommendations {#workflow}
 

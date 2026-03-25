@@ -56,8 +56,8 @@ The chain score is a numerical quality metric shown in the visualization summary
 | **0.97 - 1.00** | Excellent | Proceed to export. Spot-check a few pairs in the editor. |
 | **0.93 - 0.97** | Good | Review conflicts and editor. Fix remaining issues. |
 | **0.88 - 0.93** | Acceptable | Thorough editor review needed. Consider re-aligning problematic batches. |
-| **0.80 - 0.88** | Poor | Significant issues. Re-align with adjusted parameters or proxy. |
-| **Below 0.80** | Unusable | Text preparation issues or unsupported language pair. Clean texts, use proxy, or try a different model. |
+| **0.80 - 0.88** | Poor | Significant issues. Re-align with adjusted parameters or interlinear translation. |
+| **Below 0.80** | Unusable | Text preparation issues or unsupported language pair. Clean texts, use interlinear translation, or try a different model. |
 
 ### Score Breakdown {#score-breakdown}
 
@@ -140,7 +140,7 @@ For high-stakes outputs (TMX for professional translation, corpora for published
 1. Verify that both texts are the same work, same edition.
 2. Clean the texts more thoroughly (remove all unmatched content).
 3. Try a different embedding model.
-4. Use proxy alignment for low-resource language pairs.
+4. Use interlinear alignment for low-resource language pairs.
 
 ## When to Re-Align vs. Manual Edit {#re-align-vs-edit}
 
@@ -149,7 +149,7 @@ For high-stakes outputs (TMX for professional translation, corpora for published
 | Chain score > 0.95, a few wrong pairs | Manual edit in the editor |
 | Chain score 0.90-0.95, scattered issues | Resolve conflicts, then manual edit |
 | One batch is bad, others are good | Re-align the bad batch with adjusted shift/window |
-| Chain score < 0.90 overall | Re-align entirely (possibly with proxy or different model) |
+| Chain score < 0.90 overall | Re-align entirely (possibly with interlinear translation or different model) |
 | Many short-sentence mismatches | Manual edit (re-alignment will produce similar results) |
 | Systematic offset | Fix the source texts, re-upload, re-align |
 

@@ -200,7 +200,7 @@ Lingtrain Aligner combines several strategies to handle the difficulties describ
 
 5. **Interactive editor** — for cases that automatic resolution cannot handle, the editor provides tools to manually merge, split, delete, and reassign sentence pairs.
 
-6. **Proxy text support** — for language pairs where embedding quality is poor, a machine-translated proxy can be used as an intermediary, improving alignment quality. See [Working with Low-Resource Languages](low-resource-languages.en.md).
+6. **Interlinear translation support** — for language pairs where embedding quality is poor, a machine-translated interlinear translation can be used as an intermediary, improving alignment quality. See [Working with Low-Resource Languages](low-resource-languages.en.md).
 
 7. **Multiple embedding models** — different models excel for different language pairs. Lingtrain supports several models (BGE-M3, LaBSE, Multilingual E5, OpenAI, Qwen3) so you can choose the best one for your languages. See [Comparing Embedding Models](embedding-models-comparison.en.md).
 

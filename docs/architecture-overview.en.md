@@ -110,7 +110,7 @@ The backend is a Python application built with:
 | `auth` | `/api/auth` | Registration, login, email verification, password reset |
 | `oauth` | `/api/auth/oauth` | OAuth flows (Google, Yandex, VK) |
 | `documents` | `/api/aligner/documents` | Document upload, listing, splitting, marks |
-| `alignments` | `/api/aligner/alignments` | Alignment CRUD, control (align/stop/erase), conflicts, proxy |
+| `alignments` | `/api/aligner/alignments` | Alignment CRUD, control (align/stop/erase), conflicts, interlinear |
 | `processing` | `/api/aligner/processing` | Editor operations (page, edit, split, candidates) |
 | `export` | `/api/aligner/export` | Download results, book preview |
 | `languages` | `/api/languages` | Language listing and configuration |
@@ -171,7 +171,7 @@ Lingtrain uses a **dual-database** approach:
 - Document index (alignment mapping)
 - Batch metadata
 - Markup tags
-- Proxy text sentences
+- Interlinear text sentences
 - Cached embeddings (optional)
 - Alignment metadata (language codes, model info)
 

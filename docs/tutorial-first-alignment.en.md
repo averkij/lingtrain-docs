@@ -258,7 +258,7 @@ Now that you have completed your first alignment, you can explore more advanced 
 - [Resolving Alignment Conflicts](tutorial-conflict-resolution.en.md) — master the conflict resolution workflow.
 - [Using the Alignment Editor](tutorial-editor-guide.en.md) — learn all the editor tools.
 - [Working with Multiple Batches](tutorial-multiple-batches.en.md) — manage alignment of long texts.
-- [Aligning Texts with Proxy](tutorial-proxy-alignment.en.md) — use proxy translations for low-resource languages.
+- [Aligning Texts with Interlinear Translation](tutorial-proxy-alignment.en.md) — use interlinear translations for low-resource languages.
 - [Exporting Your Results](tutorial-export-formats.en.md) — explore all export formats and their use cases.
 
 ## Tips for Best Results {#tips}

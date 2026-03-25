@@ -191,7 +191,7 @@ The embedding model determines how sentences are converted into vectors for comp
 
 - **Check the visualization after the first batch.** The scatter plot is your best indicator of embedding quality. A clean diagonal means the model is working well for your language pair; scattered dots mean you should try a different model.
 
-- **Consider proxy texts as a complement.** If no model produces good direct alignment for your language pair, try using proxy texts (machine translations as intermediaries). See [Working with Low-Resource Languages](low-resource-languages.en.md).
+- **Consider interlinear translations as a complement.** If no model produces good direct alignment for your language pair, try using interlinear translations (machine translations as intermediaries). See [Working with Low-Resource Languages](low-resource-languages.en.md).
 
 - **Model choice is fixed per alignment.** Once you process the first batch with a model, that model is used for all subsequent batches in the same alignment. To try a different model, create a new alignment.
 

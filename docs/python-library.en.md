@@ -60,8 +60,8 @@ aligner.fill_db(
     lang_to,          # Target language code
     splitted_from,    # List of source sentences
     splitted_to,      # List of target sentences
-    proxy_from=[],    # Optional: proxy text for source
-    proxy_to=[],      # Optional: proxy text for target
+    proxy_from=[],    # Optional: interlinear text for source
+    proxy_to=[],      # Optional: interlinear text for target
     name=""           # Alignment project name
 )
 ```
@@ -82,8 +82,8 @@ aligner.align_db(
     normalize_embeddings=True,    # L2-normalize embeddings
     save_pic=False,               # Save visualization images
     img_path="",                  # Path for visualization images
-    use_proxy_from=False,         # Use proxy for source
-    use_proxy_to=False,           # Use proxy for target
+    use_proxy_from=False,         # Use interlinear for source
+    use_proxy_to=False,           # Use interlinear for target
     store_embeddings=False,       # Persist embeddings in database
     use_api=False,                # Use external API for embeddings
     api=None,                     # API provider ("hf-inference" or "openai")
@@ -178,16 +178,16 @@ Available model identifiers for `model_name`:
 
 You can also pass any Hugging Face SentenceTransformers model name directly.
 
-## Using proxy texts {#proxy}
+## Using interlinear translations {#proxy}
 
-Proxy texts are machine translations used as intermediaries for low-resource language pairs. The proxy must have the same number of lines as the original split text.
+Interlinear translations are machine translations used as intermediaries for low-resource language pairs. The interlinear document must have the same number of lines as the original split text.
 
 ```python
-# Load proxy texts
+# Load interlinear translations
 with open("source_ba_proxy_en.txt") as f:
     proxy_from = f.read().splitlines()
 
-# Create database with proxy
+# Create database with interlinear
 aligner.fill_db(
     db_path,
     lang_from="ba",
@@ -197,7 +197,7 @@ aligner.fill_db(
     proxy_from=proxy_from
 )
 
-# Align using proxy
+# Align using interlinear
 aligner.align_db(
     db_path,
     model_name="sentence_transformer_multilingual_labse",

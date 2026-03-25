@@ -76,7 +76,7 @@ Drift is problematic if it exceeds the alignment window, because the aligner wil
 - **Bad sentence splitting**: Splitting errors have fragmented sentences, producing poor embeddings
 - **Batch size too large**: Very large batches can accumulate errors
 
-**Action needed**: This pattern requires investigation. Check the sentence splitting output, try a different embedding model, reduce batch size, or try using a proxy text. Scattered alignments will have many conflicts and low chain scores.
+**Action needed**: This pattern requires investigation. Check the sentence splitting output, try a different embedding model, reduce batch size, or try using interlinear translation. Scattered alignments will have many conflicts and low chain scores.
 
 ### Parallel lines {#parallel-lines}
 

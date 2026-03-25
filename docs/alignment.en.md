@@ -47,7 +47,7 @@ The **Settings** panel controls how alignment runs:
 - **Batch count** — how many batches to process in the next "Align next" action.
 - **Window** — extra sentences added on each side of the proportional target window (default: 40). A larger window increases the chance of finding correct matches but also increases computation time and risk of false matches.
 - **Batch shift** — manual offset to adjust the target window position. Use this when sentence counts differ greatly and the alignment flow drifts away from the diagonal. Positive values shift the target window forward; negative values shift it backward.
-- **Use proxy (from) / Use proxy (to)** — enable alignment through proxy translations. These checkboxes become active once proxy documents are uploaded (see [Proxy texts](proxy.en.md)).
+- **Use interlinear (from) / Use interlinear (to)** — enable alignment through interlinear translations. These checkboxes become active once interlinear documents are uploaded (see [Interlinear translation](proxy.en.md)).
 
 ## Running the alignment {#running}
 

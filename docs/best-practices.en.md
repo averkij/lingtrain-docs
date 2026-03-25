@@ -57,8 +57,8 @@ The embedding model is the core of alignment quality. Choose based on your langu
 | Major European language pairs (EN-FR, EN-DE, EN-ES, etc.) | Default model or LaBSE |
 | Russian + any major language | LaBSE or default |
 | Chinese or Japanese + any language | LaBSE |
-| Low-resource languages (Bashkir, Chuvash, etc.) | LaBSE + proxy text |
-| Very low-resource languages | SONAR + proxy text |
+| Low-resource languages (Bashkir, Chuvash, etc.) | LaBSE + interlinear translation |
+| Very low-resource languages | SONAR + interlinear translation |
 | Russian-specific task (RU-UK, RU-BE) | LaBSE or rubert-tiny2 |
 | Maximum language coverage needed | SONAR |
 
@@ -98,22 +98,22 @@ The shift parameter is your primary tool for correcting alignment drift:
 5. Adjust by 10-20 sentences at a time; check the visualization after each adjustment
 6. Different batches may need different shifts — the tool allows per-batch shift configuration
 
-## When to Use Proxy Texts {#when-proxy}
+## When to Use Interlinear Translation {#when-proxy}
 
-Use proxy texts when:
+Use interlinear translation when:
 
 1. **The alignment quality is poor** — many conflicts, broken diagonal on visualization
 2. **One language is low-resource** — few training examples in the embedding model
 3. **The language pair is distant** — the embedding model struggles with cross-lingual similarity (e.g., Chuvash-Japanese)
 
-**How to prepare a good proxy:**
+**How to prepare a good interlinear translation:**
 
 1. Download the split text from the sentence preview
 2. Translate it using the best available MT service for this language
 3. Verify the line count matches exactly
-4. Upload as proxy on the alignment detail page
+4. Upload as interlinear document on the alignment detail page
 
-**Proxy language choice:** Translate into a language that is well-represented in the embedding model. English and Russian are safe choices for most models. If aligning Language A - Language B, and Language A is low-resource, translate Language A's split text into English and use it as the proxy.
+**Interlinear language choice:** Translate into a language that is well-represented in the embedding model. English and Russian are safe choices for most models. If aligning Language A - Language B, and Language A is low-resource, translate Language A's split text into English and use it as the interlinear translation.
 
 ## Handling Different Genres {#genres}
 
@@ -227,13 +227,13 @@ After completing alignment and conflict resolution, verify quality:
 
 **Solution:** Verify that the texts are genuine translations of each other. Compare word counts — they should be in a reasonable ratio (usually 0.7-1.4 for most language pairs).
 
-### Pitfall 6: Forgetting Proxy for Low-Resource Languages {#pitfall-no-proxy}
+### Pitfall 6: Forgetting Interlinear Translation for Low-Resource Languages {#pitfall-no-proxy}
 
-**Problem:** Attempting direct alignment of a low-resource language without proxy.
+**Problem:** Attempting direct alignment of a low-resource language without interlinear translation.
 
 **Why it matters:** The embedding model may produce meaningless vectors for under-represented languages, leading to near-random alignment.
 
-**Solution:** Check the language pair support. If one language is not well-represented, create a proxy text via machine translation.
+**Solution:** Check the language pair support. If one language is not well-represented, create an interlinear translation via machine translation.
 
 ## Summary Checklist {#checklist}
 
@@ -245,7 +245,7 @@ Before starting alignment:
 - [ ] Markup tags added (at minimum: author, title, chapter headings)
 - [ ] Marks panel shows matching tag counts between texts
 - [ ] Appropriate embedding model selected for the language pair
-- [ ] Proxy text prepared if needed for low-resource languages
+- [ ] Interlinear translation prepared if needed for low-resource languages
 
 During alignment:
 

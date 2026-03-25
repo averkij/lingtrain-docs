@@ -104,7 +104,7 @@ Japanese presents even more challenges than Chinese:
 **Tips**:
 - Sentence splitting is critical — verify the Japanese splitting carefully
 - Window of 10-15 is often necessary
-- Consider proxy text approach for difficult pairs
+- Consider interlinear translation approach for difficult pairs
 
 ### English-Arabic {#english-arabic}
 
@@ -208,7 +208,7 @@ This table provides rough estimates of alignment difficulty for common language 
 
 When working with linguistically distant language pairs:
 
-1. **Use proxy texts**: For pairs where embedding models perform poorly (e.g., Finnish-Japanese), machine-translate one text into a bridge language (like English) and align via the proxy
+1. **Use interlinear translations**: For pairs where embedding models perform poorly (e.g., Finnish-Japanese), machine-translate one text into a bridge language (like English) and align via the interlinear translation
 2. **Reduce batch size**: Smaller batches limit the accumulation of offset errors
 3. **Increase window**: Allow more room for structural differences
 4. **Use auto-optimize**: Let the system calculate shift per batch

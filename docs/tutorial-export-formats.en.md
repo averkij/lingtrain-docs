@@ -172,7 +172,7 @@ Adjust settings and regenerate until you are satisfied with the result.
 - Complete alignment database with all batches, conflicts, and resolution history.
 - Sentence embeddings for both texts.
 - All editor edits and modifications.
-- Proxy document data (if any).
+- Interlinear document data (if any).
 - Configuration parameters (batch size, window, shift, model).
 
 **How to use:** Click "Download .lt". To re-import, go to the Alignments tab and use the "Upload alignment" section at the bottom of the page. Drag and drop the `.lt` file to import it.

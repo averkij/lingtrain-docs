@@ -190,7 +190,7 @@ After resolving conflicts (both automatically and manually), verify the results:
 3. **Use "Handle start" and "Handle finish" checkboxes.** These include edge conflicts that are sometimes excluded by default.
 4. **For large conflicts, try splitting first.** Use the Split Conflict tool to break a large conflict into smaller, more manageable pieces.
 5. **If many conflicts remain, consider re-aligning.** Poor source text preparation is often the root cause. Clean the texts and try again rather than manually fixing dozens of conflicts.
-6. **Use proxy texts for low-resource languages.** If you see many conflicts with a language pair that the model does not handle well, consider using [proxy alignment](tutorial-proxy-alignment.en.md).
+6. **Use interlinear translations for low-resource languages.** If you see many conflicts with a language pair that the model does not handle well, consider using [interlinear alignment](tutorial-proxy-alignment.en.md).
 
 ## Next Steps {#next-steps}
 

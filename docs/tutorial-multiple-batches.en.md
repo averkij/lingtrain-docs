@@ -72,7 +72,7 @@ Each dot represents one aligned pair. The X-axis is the source sentence position
 - **Clean diagonal line** — excellent alignment. The model found correct matches throughout.
 - **Diagonal with minor wiggles** — good alignment. Small deviations are normal (sentence splits/merges).
 - **Broken diagonal** — the alignment drifted. Some sentences were matched far from their expected position. Adjust shift and re-align.
-- **Scattered dots** — poor alignment. The model could not find reliable matches. Consider using proxy, adjusting window, or improving text preparation.
+- **Scattered dots** — poor alignment. The model could not find reliable matches. Consider using interlinear translation, adjusting window, or improving text preparation.
 
 ### Overall Chain Score {#chain-score}
 

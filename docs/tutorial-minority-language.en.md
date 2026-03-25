@@ -23,33 +23,33 @@ Aidar identifies several texts that exist in both Bashkir and Russian:
 
 He starts with a collection of short Bashkir folk tales that was published in a bilingual Bashkir-Russian edition. He has access to both texts in digital form.
 
-## The Proxy Challenge {#proxy-challenge}
+## The Interlinear Challenge {#proxy-challenge}
 
 Bashkir is a low-resource language for most embedding models. When Aidar tries direct alignment (Bashkir as source, Russian as target), the visualization shows a scattered pattern — the model cannot reliably match Bashkir sentences to their Russian translations.
 
-This is where proxy alignment becomes essential.
+This is where interlinear alignment becomes essential.
 
-## Creating the Proxy {#creating-proxy}
+## Creating the Interlinear Translation {#creating-proxy}
 
 Aidar's approach:
 
 1. **Upload the Bashkir text** to the Documents tab and review the sentence split. The Bashkir text splits into 186 sentences.
 2. **Download the split Bashkir text** — one sentence per line.
 3. **Translate into Russian** using Yandex Translate, which has reasonable Bashkir support as a Turkic language. Yandex is a better choice than Google Translate for this pair because of its stronger coverage of languages from the former Soviet Union.
-4. **Verify the line count** — the proxy has exactly 186 lines, matching the original.
-5. **Spot-check the quality** — Aidar reads Bashkir natively and checks a random sample of 20 proxy translations. About 15 are good, 3 are acceptable, and 2 are poor (very short sentences that were mistranslated). The overall quality is sufficient for alignment purposes.
+4. **Verify the line count** — the interlinear document has exactly 186 lines, matching the original.
+5. **Spot-check the quality** — Aidar reads Bashkir natively and checks a random sample of 20 interlinear translations. About 15 are good, 3 are acceptable, and 2 are poor (very short sentences that were mistranslated). The overall quality is sufficient for alignment purposes.
 
-He uploads the proxy on the "from" side (Bashkir) of the alignment detail page.
+He uploads the interlinear document on the "from" side (Bashkir) of the alignment detail page.
 
 ## Running the Alignment {#running}
 
-With the proxy enabled, Aidar runs the alignment:
+With the interlinear translation enabled, Aidar runs the alignment:
 
-1. The system computes embeddings from the Russian proxy (instead of the original Bashkir text) and compares them against the Russian target text.
+1. The system computes embeddings from the Russian interlinear translation (instead of the original Bashkir text) and compares them against the Russian target text.
 2. Since both sides are now in Russian, the embedding model works well.
 3. The visualization shows a clean diagonal — a dramatic improvement over the direct attempt.
 
-The system finds 12 conflicts, and automatic resolution handles all of them. Aidar reviews the result in the editor with "Show subscriptions" enabled, so he can see the proxy translations below each Bashkir sentence. The pairs look correct.
+The system finds 12 conflicts, and automatic resolution handles all of them. Aidar reviews the result in the editor with "Show interlinear" enabled, so he can see the interlinear translations below each Bashkir sentence. The pairs look correct.
 
 ## Quality Review {#quality-review}
 
@@ -95,7 +95,7 @@ The parallel texts have several effects:
 
 Aidar reflects on the challenges he encountered:
 
-1. **Proxy quality varies.** Yandex Translate handles Bashkir reasonably well for common vocabulary but struggles with archaic or dialectal forms in folk tales. For these, he sometimes creates the proxy manually — slower but more accurate.
+1. **Interlinear quality varies.** Yandex Translate handles Bashkir reasonably well for common vocabulary but struggles with archaic or dialectal forms in folk tales. For these, he sometimes creates the interlinear translation manually — slower but more accurate.
 2. **Sentence splitting for Bashkir is imperfect.** The "General" language option works but occasionally misses sentence boundaries specific to Bashkir punctuation conventions. He pre-processes texts to ensure clean paragraph breaks.
 3. **Cultural context matters.** Some Bashkir expressions have no direct Russian equivalent. The alignment correctly pairs the sentences, but the translation relationship is more of an adaptation than a literal translation.
 4. **Community involvement is key.** Quality review by native speakers is essential for a trustworthy resource.
@@ -105,15 +105,15 @@ Aidar reflects on the challenges he encountered:
 
 Based on his experience, Aidar offers advice to people working on other minority languages:
 
-1. **Use proxy alignment.** It is the single most important feature for low-resource languages. Without it, direct alignment may be unusable.
+1. **Use interlinear alignment.** It is the single most important feature for low-resource languages. Without it, direct alignment may be unusable.
 2. **Choose the best translation service for your language.** Test multiple services. For Turkic languages, Yandex often outperforms Google. For African languages, Google may be better. Check.
-3. **Verify proxy quality before processing.** A poor proxy will produce a poor alignment. Spot-check at least 10% of the proxy translations.
+3. **Verify interlinear quality before processing.** A poor interlinear translation will produce a poor alignment. Spot-check at least 10% of the interlinear translations.
 4. **Export in multiple formats.** Different audiences need different formats. Learners want HTML books, researchers want corpora, translators want TMX.
 5. **Share openly.** The value of parallel texts multiplies when they are freely available. Publish under a permissive license if possible.
 6. **Document your methodology.** Future contributors need to know how the corpus was built to extend it consistently.
 
 ## Next Steps {#next-steps}
 
-- [Tutorial: Aligning Texts with Proxy](tutorial-proxy-alignment.en.md) — detailed proxy alignment instructions.
+- [Tutorial: Aligning Texts with Interlinear Translation](tutorial-proxy-alignment.en.md) — detailed interlinear alignment instructions.
 - [Tutorial: Your First Alignment](tutorial-first-alignment.en.md) — basic alignment walkthrough.
 - [Tutorial: Checking Alignment Quality](tutorial-quality-check.en.md) — quality verification methods.

@@ -120,7 +120,7 @@ Text alignment tools differ in their approach to matching sentences, level of au
 - No visualization
 - Limited output format (plain text)
 - Research tool — not designed for production use
-- No proxy text support
+- No interlinear translation support
 
 **Best for:** Researchers evaluating embedding-based alignment approaches or needing a quick command-line tool for moderate-sized texts.
 
@@ -144,9 +144,9 @@ No other tool in this comparison offers both automatic and manual conflict resol
 
 Lingtrain's batch processing system with per-batch visualization, quality scores, and adjustable parameters (window, shift) gives users fine-grained control over the alignment process. Users can inspect each batch, adjust parameters, and re-process specific segments without redoing the entire text.
 
-### Proxy Text Support {#proxy-support}
+### Interlinear Translation Support {#proxy-support}
 
-Lingtrain's built-in proxy text workflow enables alignment for language pairs where the embedding model has limited coverage. This is similar in concept to Bleualign's MT-based approach, but integrated directly into the interface with a simpler workflow.
+Lingtrain's built-in interlinear translation workflow enables alignment for language pairs where the embedding model has limited coverage. This is similar in concept to Bleualign's MT-based approach, but integrated directly into the interface with a simpler workflow.
 
 ### Comprehensive Export {#comprehensive-export}
 
@@ -166,6 +166,6 @@ Task queuing, concurrent limits, metered usage, authentication, and data isolati
 | MT-guided alignment for research corpora | Bleualign |
 | **Full-featured web-based workflow with ML, editing, and export** | **Lingtrain Aligner** |
 | Self-hosted solution with web interface | Lingtrain Aligner |
-| Alignment for low-resource languages | Lingtrain Aligner (with proxy) |
+| Alignment for low-resource languages | Lingtrain Aligner (with interlinear translation) |
 | Creating bilingual books for readers | Lingtrain Aligner (HTML export) |
 | Building TMX for professional translation | Lingtrain Aligner or LF Aligner |

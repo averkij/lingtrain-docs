@@ -53,15 +53,15 @@ Lingtrain provides language-specific sentence splitting and preprocessing for th
 
 For all other languages, the **General** splitter is available, which handles most punctuation systems correctly.
 
-## The proxy text solution {#proxy-texts}
+## The interlinear translation solution {#proxy-texts}
 
-### How proxy texts work {#how-proxy-works}
+### How interlinear translation works {#how-proxy-works}
 
-The most effective strategy for aligning low-resource language pairs is **proxy text** alignment. Instead of directly comparing embeddings between two low-resource languages, you introduce a high-resource intermediary:
+The most effective strategy for aligning low-resource language pairs is **interlinear** alignment. Instead of directly comparing embeddings between two low-resource languages, you introduce a high-resource intermediary:
 
 1. **Machine-translate** the low-resource text into a high-resource language (e.g., English or Russian)
-2. **Upload** the machine translation as a proxy document in Lingtrain
-3. **Align** using the proxy — the system compares embeddings of the proxy (high-resource) with the other text
+2. **Upload** the machine translation as an interlinear document in Lingtrain
+3. **Align** using the interlinear translation — the system compares embeddings of the interlinear text (high-resource) with the other text
 
 Because embedding models produce much better vectors for high-resource languages, the alignment quality improves dramatically.
 
@@ -70,28 +70,28 @@ Because embedding models produce much better vectors for high-resource languages
 1. Upload your Bashkir text as the source document
 2. Upload your Russian text as the target document
 3. Machine-translate the Bashkir text into Russian using an available MT service
-4. Upload the Russian translation of the Bashkir text as a **proxy (from)** document
-5. Enable "Use proxy (from)" in alignment settings
-6. Run alignment — the system compares the Russian proxy with the actual Russian target
+4. Upload the Russian translation of the Bashkir text as an **interlinear (from)** document
+5. Enable "Use interlinear (from)" in alignment settings
+6. Run alignment — the system compares the Russian interlinear translation with the actual Russian target
 
-The proxy acts as a bridge: the alignment is computed between two Russian texts (which produces high-quality embeddings), and the results are applied to the original Bashkir-Russian pair.
+The interlinear translation acts as a bridge: the alignment is computed between two Russian texts (which produces high-quality embeddings), and the results are applied to the original Bashkir-Russian pair.
 
-### When to use proxy texts {#when-proxy}
+### When to use interlinear translation {#when-proxy}
 
-Use proxy texts when:
+Use interlinear translation when:
 
 - The visualization shows scattered or noisy alignment after the first batch
 - You are working with a language that has fewer than 10 million speakers
 - The language pair does not include English, Russian, Chinese, or another major language
 - Direct alignment produces too many conflicts to resolve manually
 
-You may not need proxy texts when:
+You may not need interlinear translation when:
 
 - Both languages are well-supported by the embedding model (e.g., English-German, Russian-French)
 - The visualization shows a clean diagonal
 - Conflict counts are manageable (under 5% of total sentences)
 
-For detailed instructions on using proxy texts, see the [Proxy texts guide](proxy.en.md).
+For detailed instructions on using interlinear translation, see the [Interlinear translation guide](proxy.en.md).
 
 ## Language-specific guidance {#language-guidance}
 
@@ -103,13 +103,13 @@ Bashkir is a Turkic language spoken by approximately 1.2 million people, primari
 
 - Dedicated sentence splitter in Lingtrain
 - LaBSE provides reasonable embedding quality
-- Best results with Russian proxy text
+- Best results with Russian interlinear translation
 
 **Recommended approach:**
 
 1. Use the Bashkir language option for sentence splitting
 2. Select LaBSE as the embedding model
-3. If alignment quality is poor, add a Russian proxy (machine-translate Bashkir to Russian)
+3. If alignment quality is poor, add a Russian interlinear translation (machine-translate Bashkir to Russian)
 4. Set window parameter to 50-60 (slightly larger than default) to handle structural differences
 
 ### Chuvash (Чӑвашла) {#chuvash}
@@ -120,13 +120,13 @@ Chuvash is a Turkic language spoken by about 1 million people in the Chuvash Rep
 
 - Dedicated sentence splitter
 - LaBSE provides basic coverage
-- Proxy texts strongly recommended
+- Interlinear translation strongly recommended
 
 **Recommended approach:**
 
 1. Use the Chuvash language option for splitting
 2. Use LaBSE as the embedding model
-3. Always use a Russian proxy for best results
+3. Always use a Russian interlinear translation for best results
 4. Expect higher conflict rates than with major languages; plan for manual editing
 
 ### Komi (Коми кыв) {#komi}
@@ -137,13 +137,13 @@ Komi is a Uralic language spoken by approximately 160,000 people in the Komi Rep
 
 - Use the General splitter (Komi uses standard Cyrillic punctuation)
 - LaBSE may have limited coverage
-- Russian proxy is essential
+- Russian interlinear translation is essential
 
 **Recommended approach:**
 
 1. Use General splitting mode
 2. Use LaBSE as the embedding model
-3. Always use a Russian proxy
+3. Always use a Russian interlinear translation
 4. Increase the window parameter to 60+ for safety
 5. Be prepared for significant manual editing
 
@@ -155,13 +155,13 @@ Armenian is an Indo-European language spoken by approximately 6 million people. 
 
 - Dedicated sentence splitter handling Armenian punctuation (including the Armenian full stop `։`)
 - LaBSE provides good embedding quality (Armenian is in the LaBSE training set)
-- Direct alignment often works well without proxy
+- Direct alignment often works well without interlinear translation
 
 **Recommended approach:**
 
 1. Use the Armenian language option for splitting
 2. Use LaBSE as the embedding model
-3. Try direct alignment first; add proxy only if the visualization shows issues
+3. Try direct alignment first; add interlinear translation only if the visualization shows issues
 4. Default parameters usually work well
 
 ### Other Turkic languages {#other-turkic}
@@ -172,7 +172,7 @@ Languages like Kazakh, Uzbek, Kyrgyz, Tatar, and Azerbaijani fall into the mediu
 
 1. Use the General splitter or Turkish splitter (for Latin-script Turkic languages)
 2. Try LaBSE first
-3. Add a Russian or English proxy if needed
+3. Add a Russian or English interlinear translation if needed
 4. Test with a small batch before committing to full alignment
 
 ### Other Uralic languages {#other-uralic}
@@ -183,7 +183,7 @@ Languages like Mari, Udmurt, Erzya, and Moksha are genuinely low-resource, with 
 
 1. Use the General splitter
 2. Use LaBSE
-3. Always use a proxy (Russian recommended)
+3. Always use interlinear translation (Russian recommended)
 4. Expect significant manual work; these are among the most challenging alignment tasks
 
 ## The role of LaBSE and SONAR {#labse-sonar}
@@ -217,21 +217,21 @@ Lingtrain's support for low-resource languages is motivated by these preservatio
 
 1. **Start small.** Test with a short excerpt (50-100 sentences) before attempting a full book. This lets you evaluate embedding quality and parameter settings quickly.
 
-2. **Check the visualization early.** After the first batch, inspect the scatter plot. If it does not show a clear diagonal, switch models or add a proxy before proceeding.
+2. **Check the visualization early.** After the first batch, inspect the scatter plot. If it does not show a clear diagonal, switch models or add interlinear translation before proceeding.
 
 3. **Use larger windows.** For low-resource languages, increase the window parameter to 50-80 (default is 40). This compensates for lower embedding precision.
 
-4. **Expect more manual work.** Even with proxy texts, low-resource alignments typically produce more conflicts than high-resource ones. Budget time for manual editing in the alignment editor.
+4. **Expect more manual work.** Even with interlinear translations, low-resource alignments typically produce more conflicts than high-resource ones. Budget time for manual editing in the alignment editor.
 
-5. **Leverage machine translation for proxy.** Services like Google Translate, Yandex Translate, and DeepL support many languages. Even imperfect machine translation can serve as an effective proxy.
+5. **Leverage machine translation for interlinear.** Services like Google Translate, Yandex Translate, and DeepL support many languages. Even imperfect machine translation can serve as an effective interlinear translation.
 
-6. **Consider the direction.** If aligning language A (low-resource) with language B (high-resource), the proxy for language A is more important. The embedding model already handles language B well.
+6. **Consider the direction.** If aligning language A (low-resource) with language B (high-resource), the interlinear translation for language A is more important. The embedding model already handles language B well.
 
-7. **Document your settings.** When you find a configuration that works well for a particular language pair, record the model, window, shift, and proxy settings for future reference.
+7. **Document your settings.** When you find a configuration that works well for a particular language pair, record the model, window, shift, and interlinear settings for future reference.
 
 ## Further reading {#further-reading}
 
-- [Proxy texts](proxy.en.md) — detailed guide on using proxy texts in Lingtrain
+- [Interlinear translation](proxy.en.md) — detailed guide on using interlinear translation in Lingtrain
 - [Comparing Embedding Models](embedding-models-comparison.en.md) — choosing the right model for your languages
 - [Alignment algorithm](algorithm.en.md) — understanding the parameters that affect alignment quality
 - [Batch Processing in Detail](batch-processing-explained.en.md) — how window and shift parameters work

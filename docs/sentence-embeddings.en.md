@@ -170,7 +170,7 @@ Embedding quality varies significantly by language:
 
 - **High-resource languages** (English, French, German, Chinese, Russian) — all models produce good embeddings, alignment quality is consistently high
 - **Medium-resource languages** (Turkish, Korean, Hungarian, Czech) — most models work well, some may require a specific model choice
-- **Low-resource languages** (Bashkir, Chuvash, Komi) — only certain models (LaBSE, SONAR) provide adequate coverage, and proxy texts may be needed for best results
+- **Low-resource languages** (Bashkir, Chuvash, Komi) — only certain models (LaBSE, SONAR) provide adequate coverage, and interlinear translations may be needed for best results
 
 See [Working with Low-Resource Languages](low-resource-languages.en.md) for guidance on handling challenging language pairs.
 
@@ -190,6 +190,6 @@ Lingtrain's batch visualization (scatter plots) shows a simpler but related view
 2. **Transformers provide context** — the same word gets different representations depending on surrounding text
 3. **Multilingual models share a semantic space** — translations of the same sentence end up near each other in vector space
 4. **Cosine similarity measures semantic closeness** — normalized dot products make this computation efficient
-5. **Quality depends on the model and language** — choose the right model for your language pair, and consider proxy texts for low-resource languages
+5. **Quality depends on the model and language** — choose the right model for your language pair, and consider interlinear translations for low-resource languages
 
 For practical guidance on choosing a model, see [Comparing Embedding Models](embedding-models-comparison.en.md). For the mathematical details of cosine similarity, see [Understanding Cosine Similarity](cosine-similarity.en.md).

@@ -68,7 +68,7 @@ Yes. Select **"General"** for both languages. The embedding model still produces
 
 ### Which language pairs work best? {#best-pairs}
 
-Language pairs with strong representation in the embedding model produce the best results. Examples include English-Russian, English-German, English-French, English-Spanish, English-Chinese, and most combinations of major European languages. For less common pairs, consider using [proxy texts](proxy.en.md).
+Language pairs with strong representation in the embedding model produce the best results. Examples include English-Russian, English-German, English-French, English-Spanish, English-Chinese, and most combinations of major European languages. For less common pairs, consider using [interlinear translations](proxy.en.md).
 
 ### Does Lingtrain support right-to-left languages like Arabic or Hebrew? {#rtl-languages}
 
@@ -112,30 +112,30 @@ Yes. Click the **"Stop"** button while an alignment is running. All progress up 
 
 ---
 
-## Proxy Texts {#proxy}
+## Interlinear Translation {#proxy}
 
-### What is a proxy text? {#what-is-proxy}
+### What is an interlinear translation? {#what-is-proxy}
 
-A proxy text is a machine translation of your split document that serves as an intermediary during alignment. Instead of comparing the original sentences directly (which may not work well for under-resourced language pairs), the aligner compares the proxy translations while preserving the original texts in the final output.
+An interlinear translation is a machine translation of your split document that serves as an intermediary during alignment. Instead of comparing the original sentences directly (which may not work well for under-resourced language pairs), the aligner compares the interlinear translations while preserving the original texts in the final output.
 
-### When should I use proxy texts? {#when-proxy}
+### When should I use interlinear translation? {#when-proxy}
 
-Use proxy when:
+Use interlinear translation when:
 
 - One or both languages are low-resource (e.g., Bashkir, Chuvash, minority languages)
 - Direct alignment produces poor quality with many conflicts
 - The language pair is very distant (e.g., Japanese-Finnish)
 
-You generally do not need proxy for well-supported pairs like English-Russian, English-German, or English-French.
+You generally do not need interlinear translation for well-supported pairs like English-Russian, English-German, or English-French.
 
-### How do I create a proxy text? {#create-proxy}
+### How do I create an interlinear translation? {#create-proxy}
 
 1. Upload and split your source text normally
 2. Download the split text using the download button in the sentence preview
 3. Translate the downloaded file using any machine translation service (Google Translate, DeepL, etc.)
-4. Upload the translated file as a proxy document on the alignment detail page
+4. Upload the translated file as an interlinear document on the alignment detail page
 
-The proxy must have **exactly the same number of lines** as the original split text.
+The interlinear document must have **exactly the same number of lines** as the original split text.
 
 ---
 
@@ -183,7 +183,7 @@ Several strategies can improve alignment quality:
 
 1. **Adjust the shift** parameter if the diagonal is offset
 2. **Increase the window** parameter to give the algorithm more search space
-3. **Use proxy texts** for low-resource languages
+3. **Use interlinear translations** for low-resource languages
 4. **Clean your texts** more thoroughly (remove footnotes, page numbers, translator notes)
 5. **Ensure matching markup** (both texts should have the same structural tags)
 6. **Try a different embedding model** if available for your language pair

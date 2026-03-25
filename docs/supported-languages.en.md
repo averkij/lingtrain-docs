@@ -130,14 +130,14 @@ The available models for a specific language pair are shown in the model selecto
 - The standard tokenizer works with the Indic sentence-ending marker (purna viram `।`) when present
 - For best results, ensure consistent punctuation throughout the text
 
-## Proxy Texts for Low-Resource Languages {#proxy-for-low-resource}
+## Interlinear Translation for Low-Resource Languages {#proxy-for-low-resource}
 
-For languages with limited representation in the embedding model, alignment quality can be significantly improved by using [proxy texts](proxy.en.md). The recommended approach:
+For languages with limited representation in the embedding model, alignment quality can be significantly improved by using [interlinear translations](proxy.en.md). The recommended approach:
 
 1. Upload your text in the low-resource language
 2. Download the split text
 3. Machine-translate it into a well-supported language (English or Russian work well)
-4. Upload the translation as a proxy document
+4. Upload the translation as an interlinear document
 
 This is particularly recommended for:
 - Bashkir, Chuvash, and other Turkic minority languages
@@ -146,11 +146,11 @@ This is particularly recommended for:
 
 ## Choosing the Right Configuration {#choosing-config}
 
-| Scenario | Language Setting | Model | Proxy? |
+| Scenario | Language Setting | Model | Interlinear? |
 |----------|-----------------|-------|--------|
 | English + French novel | en / fr | Default or LaBSE | No |
 | Russian + Chinese novel | ru / zh | LaBSE | No |
 | English + Bashkir text | en / ba | LaBSE | Recommended for Bashkir side |
-| Finnish + Japanese text | General / ja | LaBSE or SONAR | Consider for both sides |
-| Hindi + Tamil text | General / General | SONAR or LaBSE | Consider proxy via English |
+| Finnish + Japanese text | General / ja | LaBSE or SONAR | Consider interlinear for both sides |
+| Hindi + Tamil text | General / General | SONAR or LaBSE | Consider interlinear via English |
 | Arabic + English text | General / en | LaBSE | No |

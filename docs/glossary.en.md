@@ -136,9 +136,9 @@ A dataset consisting of aligned sentence pairs in two languages. Parallel corpor
 
 An export format that groups aligned sentences into paragraphs based on paragraph markers detected during sentence splitting. Each paragraph in the source text corresponds to a block of aligned sentences in the target text.
 
-### Proxy Text {#proxy-text}
+### Interlinear Translation (Proxy Text) {#proxy-text}
 
-A machine-translated version of a split text used as an intermediary during alignment. When the embedding model has limited training data for a language, a proxy translation in a well-supported language (e.g., English) can improve alignment quality. The original texts are preserved in the final output.
+A machine-translated version of a split text used as an intermediary during alignment. When the embedding model has limited training data for a language, an interlinear translation in a well-supported language (e.g., English) can improve alignment quality. The original texts are preserved in the final output.
 
 ### Quality Score {#quality-score}
 

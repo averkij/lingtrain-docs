@@ -16,7 +16,7 @@ Lingtrain Aligner automates this process using neural language models that under
 - **50-200+ languages** supported, including major European, Asian, and low-resource languages
 - **Interactive conflict resolution** — review and fix mismatches where the algorithm was uncertain
 - **Batch processing** with configurable parameters (batch size, window, shift)
-- **Proxy text support** — use machine-translated intermediaries for under-resourced language pairs
+- **Interlinear translation support** — use machine-translated intermediaries for under-resourced language pairs
 - **Multiple export formats** — HTML parallel books, TMX corpora, sentence/paragraph corpora, structured data
 - **Visualization** of alignment quality per batch
 - **Full editor** for manual adjustments at the sentence level

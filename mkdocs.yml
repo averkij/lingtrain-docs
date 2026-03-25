@@ -47,8 +47,8 @@ plugins:
                 - Editor Guide: tutorial-editor-guide.md
                 - Multiple Batches: tutorial-multiple-batches.md
                 - Quality Check: tutorial-quality-check.md
-                - Proxy texts: proxy.md
-                - Proxy Alignment: tutorial-proxy-alignment.md
+                - Interlinear translation: proxy.md
+                - Interlinear Alignment: tutorial-proxy-alignment.md
                 - Export: export.md
                 - Export Formats: tutorial-export-formats.md
               - User Stories:
@@ -185,8 +185,8 @@ nav:
       - Editor Guide: tutorial-editor-guide.md
       - Multiple Batches: tutorial-multiple-batches.md
       - Quality Check: tutorial-quality-check.md
-      - Proxy texts: proxy.md
-      - Proxy Alignment: tutorial-proxy-alignment.md
+      - Interlinear translation: proxy.md
+      - Interlinear Alignment: tutorial-proxy-alignment.md
       - Export: export.md
       - Export Formats: tutorial-export-formats.md
     - User Stories:

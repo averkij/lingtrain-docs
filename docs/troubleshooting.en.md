@@ -88,7 +88,7 @@ This guide covers common problems you may encounter while using Lingtrain Aligne
 
 **Solution:**
 1. **Increase the window** parameter (try 60 or 80 instead of the default 40)
-2. **Use proxy texts** for low-resource languages
+2. **Use interlinear translations** for low-resource languages
 3. **Clean your texts** — remove content that exists in only one version (translator's notes, footnotes without counterparts)
 4. **Check batch visualization** — if the diagonal is offset, adjust the shift parameter
 5. **Try a different embedding model** if available
