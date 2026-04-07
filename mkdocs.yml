@@ -98,6 +98,10 @@ plugins:
               - "Where to Find Texts": appendix-text-sources.md
             - Python Library:
               - lingtrain-aligner: python-library.md
+            - Courses:
+              - "Course Creator Guide": "course-creator-guide.en.md"
+              - "Course Learner Guide": "course-learner-guide.en.md"
+              - "Course JSON Reference": "course-json-reference.en.md"
             - About:
               - Architecture Overview: architecture-overview.md
         - locale: ru
@@ -168,6 +172,10 @@ plugins:
               - "Где найти тексты": appendix-text-sources.md
             - Библиотека Python:
               - lingtrain-aligner: python-library.md
+            - Курсы:
+              - "Руководство автора курсов": "course-creator-guide.ru.md"
+              - "Руководство ученика": "course-learner-guide.ru.md"
+              - "JSON формат курсов": "course-json-reference.ru.md"
             - О проекте:
               - Обзор архитектуры: architecture-overview.md
 
@@ -236,5 +244,9 @@ nav:
     - "Where to Find Texts": appendix-text-sources.md
   - Python Library:
     - lingtrain-aligner: python-library.md
+  - Courses:
+    - "Course Creator Guide": "course-creator-guide.en.md"
+    - "Course Learner Guide": "course-learner-guide.en.md"
+    - "Course JSON Reference": "course-json-reference.en.md"
   - About:
     - Architecture Overview: architecture-overview.md
