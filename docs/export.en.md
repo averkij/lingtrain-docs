@@ -15,6 +15,12 @@ Configure the output with these options:
   - **Pastel Fill** — solid pastel-colored backgrounds for each language
   - **Pastel Start** — gradient backgrounds that fade out
 
+## Markup {#markup}
+
+The **Markup** section shows the marks stored in the selected `.lt` or `.ltm` alignment. The two active languages are displayed side by side; for multilingual books, they follow the primary and support language selectors. Use the shared page controls to browse long mark lists.
+
+You can add, edit, or delete marks for either visible language. Title and author marks are placed at the beginning automatically and can occur only once per language. For structural marks such as headings, specify the paragraph before which the mark must be rendered. Deleting a mark requires confirmation.
+
 ## Preview {#preview}
 
 Click **"Generate preview"** to see a live preview of the parallel book with your current settings. The preview shows how the final HTML book will look, including paragraph structure, language ordering, and highlight styling.
