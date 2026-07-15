@@ -310,7 +310,7 @@ The Ex-Commissioner of Scotland Yard was staying with old friends of his, Colone
 | `excluded` | INTEGER | Whether this line is excluded from alignment |
 
 **Notes:**
-- When downloading, embedding blobs may be stripped to reduce file size (configurable via `STRIP_EMBEDDINGS_ON_EXPORT`)
+- Downloaded copies exclude cached embedding blobs to reduce file size. The working alignment database on the server keeps its embeddings.
 - The `.lt` file is a standard SQLite3 database that can be opened with any SQLite client (DB Browser for SQLite, `sqlite3` CLI, Python's `sqlite3` module)
 - Re-importing a `.lt` file creates a new alignment with the same data but a new GUID
 
@@ -323,7 +323,7 @@ The Ex-Commissioner of Scotland Yard was staying with old friends of his, Colone
 | Human-readable | Yes | Yes | Yes | Yes | Yes | Yes | No (binary) |
 | Preserves markup | Yes | No | No | No | Yes | Yes | Yes |
 | Preserves line IDs | No | No | No | No | No | No | Yes |
-| Preserves embeddings | No | No | No | No | No | No | Optional |
+| Preserves embeddings | No | No | No | No | No | No | No |
 | Re-importable | No | No | No | No | No | No | Yes |
 | CAT-tool compatible | No | Yes | No | No | No | No | No |
 | Suitable for NLP | No | Partially | Yes | Yes | Yes | Yes | Yes |
