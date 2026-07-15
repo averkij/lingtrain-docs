@@ -116,6 +116,8 @@ who lived near St Mary Mead.
 
 After uploading, the **Sentence preview** panel shows how each document was split into individual sentences. Each line is numbered and represents one sentence that the alignment algorithm will work with.
 
+To permanently remove an unwanted split line, hover over its row and select the cross on the right. On touch devices the cross remains visible. Confirm with **Yes**; there is no undo for this action. The preview, line numbers, and Marks panel refresh after deletion.
+
 Lines that contain markup tags display the tag type as a colored badge (e.g., `author`, `title`, `paragraph`).
 
 The `paragraph` badge marks the last sentence in a paragraph — this information is used later to reconstruct paragraph structure in the exported book.
