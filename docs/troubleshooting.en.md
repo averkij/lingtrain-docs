@@ -8,16 +8,16 @@ This guide covers common problems you may encounter while using Lingtrain Aligne
 
 ### File upload fails with "Invalid file format" {#invalid-format}
 
-**Cause:** Lingtrain only accepts `.txt` files. Attempting to upload PDF, DOCX, EPUB, HTML, or other formats will be rejected.
+**Cause:** Lingtrain accepts `.txt` and `.fb2` files. PDF, DOCX, EPUB, HTML, double extensions, and other formats are rejected.
 
 **Solution:**
-1. Convert your file to plain text (`.txt`) using any text editor or conversion tool
-2. Make sure the file extension is exactly `.txt` (not `.txt.bak` or `.text`)
-3. Save in UTF-8 encoding
+1. Convert the source to plain text (`.txt`) or FictionBook 2 (`.fb2`)
+2. Make sure the final extension is exactly `.txt` or `.fb2` (not `.txt.bak` or `.fb2.zip`)
+3. For TXT, use UTF-8 when possible
 
 ### File upload fails with "File too large" {#file-too-large}
 
-**Cause:** The uploaded file exceeds the maximum size limit (4 MB by default).
+**Cause:** The uploaded file exceeds the maximum size limit (10 MB by default).
 
 **Solution:**
 1. Split your text into smaller files (e.g., by chapter or section)
@@ -26,7 +26,7 @@ This guide covers common problems you may encounter while using Lingtrain Aligne
 
 ### File upload fails with "File already exists" {#file-exists}
 
-**Cause:** A document with the same filename has already been uploaded for the same language.
+**Cause:** A document with the same stored filename has already been uploaded for the same language. `book.fb2` is stored as `book.txt` and therefore collides with an existing `book.txt`.
 
 **Solution:**
 1. Rename your file to a unique name before uploading
@@ -34,13 +34,24 @@ This guide covers common problems you may encounter while using Lingtrain Aligne
 
 ### Uploaded text has garbled characters {#garbled-text}
 
-**Cause:** The file is not encoded in UTF-8, or contains binary data.
+**Cause:** A TXT encoding could not be detected confidently, or the file contains binary data.
 
 **Solution:**
 1. Open the file in a text editor (Notepad++, VS Code, Sublime Text)
 2. Check the current encoding (usually shown in the status bar)
 3. Re-save the file as "UTF-8" or "UTF-8 without BOM"
 4. If the file was extracted from a PDF, use a higher-quality PDF extraction tool
+
+### FB2 upload fails with a conversion error {#invalid-fb2}
+
+**Cause:** The file is malformed or unsafe XML, lacks a book title/author/readable main body, or is not a valid FictionBook 2 document.
+
+**Solution:**
+1. Open the FB2 in an ebook reader or FB2 validator to confirm it is valid
+2. Check that `description/title-info` contains `book-title` and at least one `author`
+3. Re-export the book as FB2 or upload a UTF-8 TXT version instead
+
+Failed conversion does not store the original FB2 or create a document entry.
 
 ---
 

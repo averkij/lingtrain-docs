@@ -34,11 +34,11 @@ No. Lingtrain Aligner is a web application that runs entirely in your browser. Y
 
 ### What file format should my texts be in? {#file-format}
 
-Lingtrain accepts **plain text files** (`.txt`) encoded in UTF-8. Rich formats like PDF, DOCX, EPUB, or HTML are not supported directly. Convert your texts to plain text before uploading.
+Lingtrain accepts **plain text** (`.txt`) and **FictionBook 2** (`.fb2`). FB2 is converted deterministically into Lingtrain-marked UTF-8 text; images, embedded binaries, and explicit notes are omitted. PDF, DOCX, EPUB, and HTML are not supported directly.
 
 ### What is the maximum file size? {#max-file-size}
 
-The default maximum upload size for a single document is **4 MB**. This is sufficient for most full-length novels. If your text exceeds this limit, consider splitting it into parts.
+The default maximum upload size for a single document is **10 MB**. If your text exceeds this limit, consider splitting it into parts or removing unsupported embedded assets.
 
 ### Can I upload multiple files at once? {#multiple-files}
 
@@ -46,7 +46,7 @@ Each upload slot accepts one file at a time. You can upload multiple documents f
 
 ### What encoding should my text files use? {#encoding}
 
-Files must be encoded in **UTF-8**. If your file uses a different encoding (like Windows-1251 or ISO-8859-1), convert it to UTF-8 before uploading. Most text editors (Notepad++, VS Code, Sublime Text) can re-save files in UTF-8.
+UTF-8 is recommended for TXT. Lingtrain also recognizes UTF-16/UTF-32 and common legacy encodings such as Windows-1251 or Windows-1252 when detection is confident; if a TXT is rejected, re-save it as UTF-8. FB2 follows its BOM or XML encoding declaration.
 
 ### What does the "Clean text" option do? {#clean-text}
 
@@ -230,11 +230,11 @@ The API uses JWT (JSON Web Token) bearer authentication. Obtain a token by sendi
 
 ### "File too large" error {#file-too-large}
 
-Your file exceeds the maximum upload size (4 MB by default). Reduce the file size by splitting it into smaller parts or removing unnecessary content.
+Your file exceeds the maximum upload size (10 MB by default). Reduce the file size by splitting it into smaller parts or removing unnecessary content.
 
 ### "File already exists" error {#file-exists}
 
-A file with the same name has already been uploaded for this language. Either rename your file or delete the existing one first.
+A file with the same stored name has already been uploaded for this language. FB2 names are checked after changing the suffix to `.txt`, so `book.fb2` conflicts with an existing `book.txt`. Rename the file or delete the existing document first.
 
 ### "Concurrent task limit reached" {#concurrent-limit}
 

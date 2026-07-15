@@ -4,12 +4,12 @@ The **Documents** tab is where you upload, preview, and manage source texts befo
 
 ## Preparing your texts {#preparation}
 
-Before uploading, prepare your text files:
+Before uploading, prepare your document files:
 
-1. **Use plain text format** (`.txt`). The system processes raw text, not PDF, DOCX, or other rich formats.
-2. **Remove extraneous content** — page numbers, footnotes, edition-specific notes, table of contents, translator's prefaces (unless you want them aligned).
-3. **Keep paragraphs separated by blank lines**. The splitter uses paragraph breaks to improve sentence detection.
-4. **Add markup tags** (see below) for titles, author names, headings, and other metadata.
+1. Use **plain text** (`.txt`) or **FictionBook 2** (`.fb2`). PDF, DOCX, EPUB, and HTML are not accepted directly.
+2. For TXT, remove extraneous content such as page numbers, footnotes, edition-specific notes, and unwanted prefaces.
+3. For TXT, keep paragraphs separated by blank lines. The splitter uses paragraph breaks to improve sentence detection.
+4. For TXT, add markup tags (see below) for titles, author names, headings, and other metadata. FB2 structure is marked automatically.
 
 ## Selecting languages {#languages}
 
@@ -25,14 +25,33 @@ At the top of the Documents page, select the **source** ("From") and **target** 
 
 Each language panel has a drag-and-drop upload area. You can either:
 
-- **Drag and drop** a `.txt` file onto the upload area
+- **Drag and drop** a `.txt` or `.fb2` file onto the upload area
 - **Click** the upload area to open a file picker
 
-The **Clean text** checkbox applies basic text normalization (removing extra whitespace, fixing encoding issues) during upload. Enable it if your text has formatting artifacts.
+The default limit is **10 MB per file**. TXT files are normalized to UTF-8; if an unusual source encoding cannot be detected confidently, save the file as UTF-8 and retry.
 
 After uploading, the document appears in the list below the upload area, and the **Sentence preview** panel updates to show the split result.
 
 ![Documents page with uploaded texts](img/documents-uploaded.en.png)
+
+## FB2 conversion {#fb2-conversion}
+
+FB2 files are converted on the server before sentence splitting. The conversion is deterministic: the same file, selected language, and converter rules produce the same UTF-8 marked text.
+
+| FB2 structure | Generated Lingtrain text |
+|---|---|
+| Book title, authors, translators | `title`, `author`, and optional `translator` marks |
+| Flat top-level sections | `h2` headings |
+| Parts with titled subsections | Part as `h1`; nested headings descend through `h2`–`h5` |
+| Subtitles | One heading level below the containing section |
+| Epigraphs and citations | `qtext`; attribution as `qname` |
+| Poems | One atomic `verse` line per `<v>`, with stanza breaks preserved |
+| Decorative glyph-only paragraphs | `divider` |
+| Ordinary paragraphs and inline emphasis | Plain, single-line text |
+
+The title metadata is authoritative, so a duplicate printed title page in the body is omitted. Cover images, embedded binary data, named notes/comments bodies, and explicit note-link labels are also omitted. The original FB2 is not stored.
+
+An uploaded `novel.fb2` is listed and stored as `novel.txt`. That generated TXT is the document used by sentence preview, alignment, and downloads. The language selected in the upload dialog controls both sentence splitting and conservative English/Russian front-matter cleanup; the FB2 `<lang>` field is informational.
 
 ## Markup tags {#markup}
 
@@ -54,10 +73,11 @@ Lingtrain uses special markup tags to separate metadata (titles, headings, quote
 | `%%%%%image.` | Image reference | `illustration.jpg%%%%%image.` |
 | `%%%%%translator.` | Translator credit | `Translated by John Doe%%%%%translator.` |
 | `%%%%%divider.` | Section divider | `* * *%%%%%divider.` |
+| `%%%%%verse.` | Atomic poetry line | `The moon rises%%%%%verse.` |
 
 ### How tags work {#how-tags-work}
 
-- Tagged lines are **excluded from the alignment algorithm** — they won't be matched against sentences in the other language.
+- Most tagged lines are **excluded from the alignment algorithm** and retained as structure. A `verse` line is content-bearing and is aligned atomically without sentence splitting.
 - Tags are **preserved as metadata** in the alignment database and used for formatting in the exported book (title pages, chapter headings, quotation styling).
 - The `author` and `title` tags are the most important — they produce the title page in the exported HTML book.
 - **Both texts should have matching markup**. For example, if the English text has `%%%%%author.` and `%%%%%title.` tags, the Russian text should have them too.
