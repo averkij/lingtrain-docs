@@ -125,6 +125,7 @@ Each row displays:
 - **Row number** (#1, #2, ...)
 - **Source line IDs** — original line numbers from both texts (these are preserved through all edits, maintaining the binding to source documents)
 - **Source text** (left) and **target text** (right)
+- **Paragraph number** for the first source line in each cell (the same one-based number used by the marks editor)
 
 ### Editor actions {#editor-actions}
 
@@ -147,6 +148,16 @@ Use these tools to:
 - **Manually resolve** conflicts that the automatic resolver couldn't handle
 
 The editor supports pagination (configurable: 10, 20, or 50 lines per page) and a "Go to page" feature for quick navigation.
+
+The candidate browser also accepts an exact line ID or a case-insensitive text substring. A successful search centers the normal candidate window on the closest matching source line; an unsuccessful search leaves the current window unchanged.
+
+### Validation and modification {#validation-modification}
+
+The section below the editor lists pairs whose left or right cell has no source line ID. It shows both texts, identifies the affected side, and can assign a new ID without creating a duplicate editor row. Use **Open in editor** to jump to and focus the exact pair.
+
+**Structure modification** reports blockers such as empty mappings, malformed or missing IDs, duplicate references, unreferenced source rows, and processing/index mismatches. **Renumber** becomes available only when every source row on both sides is referenced exactly once. It assigns each side independent IDs `1..N` in the current alignment order and cannot be undone.
+
+Renumbering updates artifact-local sentence features. Historical reader or SRS events stored outside the artifact can still contain old line IDs and cannot be rewritten reliably.
 
 ## Workflow summary {#workflow}
 

@@ -63,6 +63,8 @@ Click the **Candidates** button to browse alternative sentence matches for a cel
 
 Use the **Previous** and **Next** buttons to cycle through candidates. When you find the correct match, confirm the selection.
 
+Enter an exact line ID or a text substring in **ID or substring**, then press Enter or **Go**. Text search is Unicode-aware and case-insensitive. If several lines match, the editor selects the one closest to the current candidate position (using the lower ID for an equal-distance tie). A failed search keeps the current candidate window visible.
+
 This feature is particularly useful for:
 
 - **Fixing mismatches** — when the wrong sentence ended up in a cell.
@@ -98,6 +100,18 @@ Empty rows are useful for:
 The **Split sentence** action allows you to split the content of a cell at a specific character position. When activated, you specify the split position, and the text is divided into two parts: the first part stays in the current cell, and the second part moves to a new row below.
 
 This is useful when two sentences were incorrectly joined into one cell — you can split them and align each part separately.
+
+## Validation and ID management {#validation-id-management}
+
+The always-visible **Validation and modification** section audits the current bilingual structure:
+
+- **Cells without line IDs** is paged by 20. Each entry shows both texts and the missing side. **Assign new ID** inserts the source row at the structural position implied by the preceding mapped line while reusing the existing editor pair.
+- **Open in editor** uses your active editor page size, scrolls to the exact pair, and moves keyboard focus there.
+- **Structure modification** lists every condition that blocks safe renumbering. Resolve all empty, malformed, missing, duplicate, unreferenced, or inconsistent mappings first.
+
+When no blockers remain, **Renumber** gives each language side independent IDs `1..N` in the current flattened alignment order. Grouped-cell order and sentence metadata are preserved. Confirm only after checking semantic order: the action is irreversible.
+
+Artifact-local sentence feature rows are remapped. Historical reader and SRS events stored elsewhere may retain old line IDs.
 
 ## Working with Interlinear Annotations {#proxy-annotations}
 
