@@ -29,6 +29,14 @@ Click **"Generate preview"** to see a live preview of the parallel book with you
 
 Adjust settings and regenerate the preview until you're satisfied with the result.
 
+## Sharing {#sharing}
+
+Administrators can share their own alignment from the **Share** section. Sharing gives signed-in recipients read-only access to the original book; it does not create a copy. Choose **For everyone** to allow any signed-in Lingtrain user, or find specific active accounts by nickname. The picker does not search or display email addresses. At least one aligned, readable batch is required, so a partially aligned book can be shared and grows automatically as more batches become readable.
+
+While access is active, the section shows one HTTPS invitation link and QR code. The invitation offers **Read on web** and **Open in Theseus**. Each reader keeps independent reading progress, settings, annotations, shelf membership, and offline download against the same live alignment.
+
+Removing direct access keeps the configured recipient list for later reuse. It does not unpublish a book that is separately published in the public Library. Revocation blocks future server reads, downloads, and updates, but cannot remotely erase content already downloaded for offline reading.
+
 ## Download formats {#download}
 
 ![Download formats](img/create-download.en.png)

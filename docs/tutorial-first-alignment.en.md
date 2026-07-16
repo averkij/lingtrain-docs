@@ -92,9 +92,11 @@ Switch to the **Alignments** tab. If this is your first alignment, you will see 
 
 ![Alignments tab — empty](assets/screenshots/aligner-alignments-empty.png)
 
-Click **"+ Create alignment"** in the top-right corner. A dialog appears:
+Click **"+ Create"** in the top-right corner. In the dialog, choose **Alignment**:
 
 ![Create alignment dialog](assets/screenshots/aligner-create-alignment-dialog.png)
+
+The second step keeps the alignment form:
 
 1. **Name** — give your alignment a descriptive name, for example "The Blue Geranium EN-RU".
 2. **Source document** — select the English document you uploaded.

@@ -51,13 +51,20 @@ UI state, and actions needed to recreate the screenshot.
 ## create-alignment-dialog.en.png
 
 - **URL:** `/aligner/alignments`
-- **Section:** Alignments tab — Create alignment dialog
-- **State:** Dialog open, name filled as "Blue Geranium EN-RU", source = `EN agata_geran_en.txt`, target = `RU agata_geran_ru.txt`.
+- **Section:** Alignments tab — Create dialog chooser
+- **State:** Fixed-size Create dialog open on step 1, showing the Monolingual book and Alignment tiles side by side.
 - **Locale:** `en`
 - **How to reproduce:**
-  1. Click "+ Create alignment" button.
-  2. Type "Blue Geranium EN-RU" in the Name field.
-  3. Source and target documents auto-selected from uploaded files.
+  1. Click the "+ Create" button.
+  2. Capture the chooser before selecting a tile.
+
+## aligner-create-alignment-dialog.png
+
+- **URL:** `/aligner/alignments`
+- **Section:** First-alignment tutorial — Create dialog chooser
+- **State:** Same chooser state as `create-alignment-dialog.en.png`; this copy is stored under `assets/screenshots/` for tutorial pages.
+- **Locale:** `en`
+- **How to reproduce:** Click "+ Create" and capture the fixed-size step-1 chooser before selecting a tile.
 
 ## alignment-detail.en.png
 

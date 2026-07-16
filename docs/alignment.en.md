@@ -2,19 +2,31 @@
 
 The **Alignments** tab is where you create, run, and manage text alignment projects. Alignment is the core process that matches sentences between two texts using ML-powered semantic similarity.
 
-## Creating an alignment {#creating}
+## Creating from uploaded documents {#creating}
 
-To start aligning, click **"+ Create alignment"** in the top-right corner of the Alignments tab.
+Click **"+ Create"** in the top-right corner of the Alignments tab. The first step lets you choose **Monolingual book** or **Alignment**.
 
 ![Alignments list — empty state](img/alignments-list.en.png)
 
-In the dialog:
+![Create dialog](img/create-alignment-dialog.en.png)
+
+### Monolingual book {#creating-monobook}
+
+Choose **Monolingual book** to create a private, immediately readable book from one uploaded document. Enter the book name, select the source document, and click **Create book**. The newest document is selected automatically; its title mark is used as the name when available, otherwise the filename is used.
+
+Creation uses the current edited **Sentence preview**, not the original upload. Deleted sentences stay deleted, edited text and structural marks are preserved, and retained paragraph markers determine paragraph grouping. Blank gaps removed from verse during document preparation are no longer present, so creation treats each consecutive surviving verse run as one stanza and cannot restore the removed gaps.
+
+The new book appears in the alignment list and is available to its owner in the web and Theseus readers. It remains private until it is explicitly shared or published.
+
+Selecting a monolingual book in the alignment list opens its LTM editor with one language column. The same book remains available in the single-pane web reader.
+
+### Alignment {#creating-alignment}
+
+Choose **Alignment**. In the second step:
 
 1. **Name** — give your alignment a descriptive name (e.g., "Blue Geranium EN-RU").
 2. **Source document** — select the "from" text from your uploaded documents.
 3. **Target document** — select the "to" text.
-
-![Create alignment dialog](img/create-alignment-dialog.en.png)
 
 Click **"Create alignment"** to initialize the project. The system will split your texts into batches and prepare the alignment database.
 
